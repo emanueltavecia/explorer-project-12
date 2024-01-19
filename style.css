@@ -11,7 +11,7 @@
   --ff-primary: 'Poppins', sans-serif;
   --text-color: #303030;
   --hue: 194;
-  --primary-color: hsl(var(--hue), 100%, 63%)
+  --primary-color: hsl(var(--hue), 100%, 63%);
 }
 
 body {
@@ -22,7 +22,6 @@ body {
 body * {
   font-family: var(--ff-primary);
 }
-
 
 .sr-only {
   position: absolute;
