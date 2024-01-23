@@ -1,4 +1,4 @@
-import { GitHubUser } from './GItHubUser.js'
+import { GitHubUser } from './GitHubUser.js'
 
 // classe que vai conter a lógica dos dados
 export class Favorites {
