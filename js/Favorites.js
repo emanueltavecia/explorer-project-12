@@ -21,13 +21,13 @@ export class Favorites {
     try {
       const userExists = this.entries.find((entry) => entry.login === username)
       if (userExists) {
-        throw new Error('Usuário já cadastrado')
+        throw new Error('Already registered user')
       }
 
       const user = await GitHubUser.search(username)
 
       if (user.login === undefined) {
-        throw new Error('Usuário não encontrado')
+        throw new Error('User not found')
       }
 
       this.entries = [user, ...this.entries]
@@ -76,7 +76,7 @@ export class FavoriteView extends Favorites {
       row.querySelector(
         '.user img'
       ).src = `https://github.com/${user.login}.png`
-      row.querySelector('.user img').alt = `Imagem de ${user.name}`
+      row.querySelector('.user img').alt = `Image of ${user.name}`
       row.querySelector('.user a').href = `https://github.com/${user.login}`
       row.querySelector('.user p').textContent = user.name
       row.querySelector('.user span').textContent = user.login
@@ -84,7 +84,7 @@ export class FavoriteView extends Favorites {
       row.querySelector('.followers').textContent = user.followers
 
       row.querySelector('.remove').onclick = () => {
-        const isOk = confirm('Tem certeza que deseja deletar essa linha?')
+        const isOk = confirm('Are you sure you want to delete this line?')
 
         if (isOk) {
           this.delete(user)
@@ -102,7 +102,7 @@ export class FavoriteView extends Favorites {
         <td class="user">
           <img
             src="https://github.com/emanueltavecia.png"
-            alt="Imagem de emanueltavecia"
+            alt="Image of emanueltavecia"
           />
           <a href="https://github.com/emanueltavecia" target="_blank">
             <p>Emanuel Tavecia</p>
